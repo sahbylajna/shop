@@ -1,0 +1,22 @@
+[
+    {
+        "model-name": "color",
+        "resource-file": "colors.json"
+    },
+    {
+        "model-name": "size",
+        "resource-file": "sizes.json"
+    },
+    {
+        "model-name": "produit",
+        "resource-file": "produits.json"
+    },
+    {
+        "model-name": "setting",
+        "resource-file": "settings.json"
+    },
+    {
+        "model-name": "ordre",
+        "resource-file": "ordres.json"
+    }
+]
