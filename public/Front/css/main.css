@@ -77,7 +77,7 @@ a#scrollUp i{
 
 .contactinfo ul li a{
   font-size: 12px;
-  color: #4fdba9;
+  color: #01a7b7;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -154,7 +154,7 @@ a#scrollUp i{
 
 .usa {
   border-radius: 0;
-  color: #4fdba9;
+  color: #01a7b7;
   font-size: 12px;
   margin-right: 20px;
   padding: 2px 15px;
@@ -360,7 +360,7 @@ ul.sub-menu {
 }
 
 .companyinfo h2 {
-  color: #4fdba9;
+  color: #01a7b7;
   font-family: abel;
   font-size: 27px;
   text-transform: uppercase;
@@ -596,7 +596,7 @@ ul.sub-menu {
 }
 
 .item h1 {
-  color: #4fdba9;
+  color: #01a7b7;
   font-family: abel;
   font-size: 48px;
   margin-top: 115px;
@@ -976,7 +976,7 @@ h2.title {
 }
 
 .choose ul li a {
-  color: #4fdba9;
+  color: #01a7b7;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   padding-left: 0;
@@ -997,7 +997,7 @@ h2.title {
 }
 
 .category-tab ul {
-  background: #4fdba9;
+  background: #01a7b7;
   border-bottom: 1px solid #fb28f5;
   list-style: none outside none;
   margin: 0 0 30px;
@@ -1008,7 +1008,7 @@ h2.title {
 .category-tab ul li a {
   border: 0 none;
   border-radius: 0;
-  color: #4fdba9;
+  color: #01a7b7;
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;

@@ -87,7 +87,7 @@
 							</button>
 						</div>
                         <div class="logo pull-left">
-							<a href="{{ url('/') }}"><img src="{{ asset('Front/images/home/logo1.png') }}" alt="" width=" 175px"  style="    width: -webkit-fill-available;"/></a>
+							<a href="{{ url('/') }}"><img src="{{ asset('Front/images/home/logo.png') }}" alt="" width=" 175px"  style="    width: -webkit-fill-available;"/></a>
 						</div>
 						{{-- <div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
