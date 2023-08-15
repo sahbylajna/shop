@@ -11,7 +11,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{ asset('public/'. $produit->photo) }}" alt="" />
+                            <img src="{{ asset('shop/public/'.$produit->photo) }}" alt="" />
 
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">

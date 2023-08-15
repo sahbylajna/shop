@@ -33,9 +33,13 @@
 
 
 .panel ,.panel-heading ,.left-sidebar h2:before ,h2.title:before {
-    background-color: #fff7df!important;
+    background-color: #fff7df00!important;
 }
+.social-icons ul li a i {
+    font-size: 20px;
+    color: #01a7b7;
 
+}
 
     </style>
     @yield('css')
@@ -43,7 +47,7 @@
 @php
      $setting = App\Models\setting::latest()->first();
 @endphp
-<body style="    background: #fff7df;">
+<body style="    background: #fff7df00;">
 	<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
@@ -52,21 +56,20 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 
-								<li><a href="#"><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
+								<li><a href="#" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> {{ $setting->email }}</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i> {{ $setting->whatsapp }}</a></li>
+
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
-							{{-- <ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul> --}}
+							<ul class="nav navbar-nav">
+								<li><a href="https://www.instagram.com/elegantbaby.qa/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://maps.google.com/?q=25.269527,51.408916"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي
+                                </a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -87,7 +90,7 @@
 							</button>
 						</div>
                         <div class="logo pull-left">
-							<a href="{{ url('/') }}"><img src="{{ asset('Front/images/home/logo.png') }}" alt="" width=" 175px"  style="    width: -webkit-fill-available;"/></a>
+							<a href="{{ url('/') }}"><img src="{{ asset('Front/images/home/logo.png') }}" alt="" width=" 175px"  style="    width: 300px;"/></a>
 						</div>
 						{{-- <div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
@@ -157,7 +160,17 @@
 			<div class="container">
 				<div class="row">
 
-
+                    <div class="col-sm-12">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+                                <li><a href="#" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> {{ $setting->email }}</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> {{ $setting->whatsapp }}</a></li>
+								<li><a href="https://www.instagram.com/elegantbaby.qa/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://maps.google.com/?q=25.269527,51.408916"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي                                </a></li>
+							</ul>
+						</div>
+					</div>
 
 				</div>
 			</div>
@@ -183,4 +196,3 @@
     <script src="{{ asset('Front/js/main.js') }}"></script>
 </body>
 </html>
-

@@ -11,7 +11,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{ asset('public/'. $produit->photo) }}" alt="" />
+                            <img src="{{ asset('shop/public/'. $produit->photo) }}" alt="" />
 
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -50,13 +50,13 @@
 <input type="hidden" name="porduit" value="{{ $produit->id }}">
                             <span>
                                 <span>{{ $produit->price }} QAR</span>
-                                <label>Quantity:</label>
+                                <label>الكمية:</label>
                                 <input type="number" value="1"  min="1" max="1000" name="quantity"/>
                             </span>
                             <span>
                             </span>
                             <span>
-                                <label>Color:</label>
+                                <label>اللون:</label>
                                 @foreach ( $produit->colors as $color )
 
                                 <input id="cb3{{ $color->id }}" type="radio" name="color" value="{{ $color->id }}" style="background:{{ $color->valeur }};accent-color:{{ $color->valeur }};-webkit-appearance: none;"  />
@@ -66,7 +66,7 @@
 
                             </span>
                             <span class="select-size">
-                                <label>Size:</label>
+                                <label>مقاس:</label>
 
                                     @foreach ( $produit->sizes as $size )
                                     <input type="radio" name="ssize" id="{{   $size->name}}" style="    visibility: hidden;" value="{{   $size->id}}"/>
@@ -82,7 +82,7 @@
 
                                 <button type="submit" class="btn btn-fefault cart">
                                     <i class="fa fa-shopping-cart"></i>
-                                    Add to cart
+                                    إرسال طلب
                                 </button>
                             </span>
 
@@ -94,7 +94,7 @@
                 <div class="category-tab shop-details-tab"><!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+                            <li class="active"><a href="#details" data-toggle="tab">وصف المنتج</a></li>
 
                         </ul>
                     </div>
@@ -103,8 +103,8 @@
 
                             <div class="col-sm-12">
 
-                                <p>{{  $produit->description  }} </p>
-                                <p>{{  $produit->description_ar  }} </p>
+                                <p>{!!  $produit->description  !!} </p>
+                                <p>{!!  $produit->description_ar  !!} </p>
 
 
 

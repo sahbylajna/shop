@@ -38,7 +38,7 @@
 									<a type="button" href="{{ route('produit.show',$slider->id) }}" class="btn btn-default get">Get it now</a>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{ asset('public/'.$slider->photo) }}" class="girl img-responsive" alt="" />
+									<img src="{{ asset('shop/public/'.$slider->photo) }}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
                             @else
@@ -50,7 +50,7 @@
 									<a type="button" href="{{ route('produit.show',$slider->id) }}" class="btn btn-default get">Get it now</a>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{ asset('public/'.$slider->photo) }}" class="girl img-responsive" alt="" />
+									<img src="{{ asset('shop/public/'.$slider->photo) }}" class="girl img-responsive" alt="" />
 
 								</div>
 							</div>
@@ -83,32 +83,51 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="left-sidebar">
-						<h2>Category</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<h2>قائمة الفئات</h2>
+						<div class="panel-group category-products" id="accordian" style="    text-align: center;"><!--category-productsr-->
 
+<div class="panel panel-default col-sm-2" style=" width: 75px;
+  height: 75px;
+  line-height: 75px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #01a7b7;
+  border: #fb28f5 solid 2px;
+  margin-left: 10px;
+    margin-right: 10px;
+  text-align: center;
+  background: #fffefe;">
+  	<a href="{{ asset('/') }}"  style="    color: #01a7b7;">الرئيسية</a>
 
-                            <div class="panel panel-default col-sm-2" style="    margin-top: 5px;
-                            border: #615d5d47 solid 2px;
-                            border-radius: 34px;
-                            background-color: #615d5d47!important;
-    margin-left: 10px;
-    margin-right: 10px;">
-								<div class="panel-heading" style="   background-color: #615d5d00!important;">
-									<h4 class="panel-title"><a href="{{ asset('/') }}">Home</a></h4>
-								</div>
-							</div>
+</div>
 
 							@foreach (App\Models\category::all() as $category)
-                            <div class="panel panel-default col-sm-2" style="    margin-top: 5px;
-                            border: #615d5d47 solid 2px;
-                            border-radius: 34px;
-                            background-color: #615d5d47!important;
-    margin-left: 10px;
-    margin-right: 10px;">
-								<div class="panel-heading" style="   background-color: #615d5d00!important;">
-									<h4 class="panel-title"><a href="{{ asset('/') }}?category={{ $category->id }}">{{  $category->name }}</a></h4>
-								</div>
-							</div>
+
+<div class="panel panel-default col-sm-2" style=" width: 75px;
+
+  height: 75px;
+  line-height: 75px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #01a7b7;
+  margin-left: 10px;
+    margin-right: 10px;
+  border: #fb28f4 solid 2px;
+  text-align: center;
+  background: #fffefe;">
+  	<a href="{{ asset('/') }}?category={{ $category->id }}" style="    color: #01a7b7;">{{  $category->name_ar }}</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
                             @endforeach
 
 
@@ -121,27 +140,27 @@
 					</div>
 				</div>
 
-				<div class="col-sm-9 padding-right">
+				<div class="col-sm-12 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">المنتجات</h2>
 
 
 
                         @foreach ($produitas as $item)
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="{{ asset('public/'. $item->photo) }}" style="min-height: 256px;min-width: 265px;max-height: 256px;" alt="" />
+										<img src="{{ asset('shop/public/'.$item->photo) }}" style="min-height: 256px;min-width: 265px;max-height: 256px;" alt="" />
 										<h2>{{ $item->price }} QAR</h2>
 										<p>{{ $item->name }}<br>{{ $item->name_ar }}</p>
-										<a href="{{ route('produit.show',$item->id) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<a href="{{ route('produit.show',$item->id) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>تفاصيل المنتج</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>{{ $item->price }} QAR</h2>
 											<p>{{ $item->name }}<br>{{ $item->name_ar }}</p>
-											<a href="{{ route('produit.show',$item->id) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="{{ route('produit.show',$item->id) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>تفاصيل المنتج</a>
 										</div>
 									</div>
 								</div>
