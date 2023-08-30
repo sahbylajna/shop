@@ -84,38 +84,44 @@
 				<div class="col-sm-12">
 					<div class="left-sidebar">
 						<h2>قائمة الفئات</h2>
-						<div class="panel-group category-products" id="accordian" style="    text-align: center;"><!--category-productsr-->
+						<div class="panel-group category-products horizontal-scroll" id="accordian" style="    text-align: center;"><!--category-productsr-->
 
-<div class="panel panel-default col-sm-2" style=" width: 75px;
-  height: 75px;
-  line-height: 75px;
-  border-radius: 50%;
-  font-size: 15px;
-  color: #01a7b7;
-  border: #fb28f5 solid 2px;
-  margin-left: 10px;
-    margin-right: 10px;
-  text-align: center;
-  background: #fffefe;">
-  	<a href="{{ asset('/') }}"  style="    color: #01a7b7;">الرئيسية</a>
+<div class="panel panel-default col-sm-4 col-4 itema" style=" width: 100px;
+height: 100px;
+line-height: 39px;
+">
+
+  	<a href="{{ asset('/') }}"  style="    color: #01a7b7;">
+        <img src="{{ asset('Front/images/home/home.png') }}" style="max-width:60px;    margin-top: 7px; border-radius: 50%;
+        font-size: 15px;
+        color: #01a7b7;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: #ff1a8f solid 2px;
+        text-align: center;
+        background: #fffefe;" alt="">
+        الرئيسية</a>
 
 </div>
 
 							@foreach (App\Models\category::all() as $category)
 
-<div class="panel panel-default col-sm-2" style=" width: 75px;
+<div class="panel panel-default col-sm-4 col-4 itema" style=" width: 100px;
+height: 100px;
 
-  height: 75px;
-  line-height: 75px;
-  border-radius: 50%;
-  font-size: 15px;
-  color: #01a7b7;
-  margin-left: 10px;
-    margin-right: 10px;
-  border: #fb28f4 solid 2px;
-  text-align: center;
-  background: #fffefe;">
-  	<a href="{{ asset('/') }}?category={{ $category->id }}" style="    color: #01a7b7;">{{  $category->name_ar }}</a>
+">
+
+  	<a href="{{ asset('/') }}?category={{ $category->id }}" style="    color: #01a7b7;">
+
+        <img src="{{ asset('images/'.$category->id.'.png') }}" style="max-width:60px;    margin-top: 7px;border-radius: 50%;
+        font-size: 15px;
+        color: #01a7b7;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: #ff1a8f solid 2px;
+        text-align: center;
+        background: #fffefe;" alt="">
+        {{  $category->name_ar }}</a>
 
 </div>
 

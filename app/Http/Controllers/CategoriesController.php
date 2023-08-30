@@ -29,8 +29,8 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        
-        
+
+
         return view('categories.create');
     }
 
@@ -44,9 +44,10 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         try {
-            
+
+
             $data = $this->getData($request);
-            
+
             category::create($data);
 
             return redirect()->route('categories.category.index')
@@ -54,7 +55,7 @@ class CategoriesController extends Controller
         } catch (Exception $exception) {
 
             return back()->withInput()
-                ->withErrors(['unexpected_error' => trans('categories.unexpected_error')]);
+                ->withErrors(['unexpected_error' => $exception->getMessage()]);
         }
     }
 
@@ -82,7 +83,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $category = category::findOrFail($id);
-        
+
 
         return view('categories.edit', compact('category'));
     }
@@ -98,9 +99,9 @@ class CategoriesController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $category = category::findOrFail($id);
             $category->update($data);
 
@@ -110,7 +111,7 @@ class CategoriesController extends Controller
 
             return back()->withInput()
                 ->withErrors(['unexpected_error' => trans('categories.unexpected_error')]);
-        }        
+        }
     }
 
     /**
@@ -135,27 +136,45 @@ class CategoriesController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
     {
         $rules = [
                 'name' => 'string|min:1|max:255|nullable',
-            'name_ar' => 'string|min:1|nullable', 
+            'name_ar' => 'string|min:1|nullable',
+            'photo' => ['file','nullable'],
         ];
 
-        
         $data = $request->validate($rules);
+        if ($request->has('custom_delete_photo')) {
+            $data['photo'] = null;
+        }
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $this->moveFile($request->file('photo'));
+        }
 
 
 
 
         return $data;
+    }
+    protected function moveFile($file)
+    {
+        if (!$file->isValid()) {
+            return '';
+        }
+
+        $path = config('laravel-code-generator.files_upload_path', 'uploads');
+        $saved = $file->store('images',['disk' => 'public_uploads']);
+
+        return  $saved;
+
     }
 
 }

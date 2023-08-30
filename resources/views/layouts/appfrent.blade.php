@@ -23,6 +23,27 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('Front/images/ico/apple-touch-icon-72-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('Front/images/ico/apple-touch-icon-57-precomposed.png') }}">
     <style>
+        /* Apply horizontal scroll on mobile devices */
+@media (max-width: 768px) {
+  .horizontal-scroll {
+    display: flex!important;
+    overflow-x: auto!important;
+
+    padding: 10px!important; /* Add padding for better visual appearance */
+  }
+  .panel-group .panel {
+    /* margin-bottom: 0; */
+    overflow: initial;
+    border-radius: 4px;
+}
+  .itema {
+    display: inline-grid;
+    width: 100px!important;
+    height: 100px!important;
+
+  }
+}
+
         .product-information span {
     display: block;
 }
@@ -56,7 +77,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 
-								<li><a href="#" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
+								<li><a href="tel:00{{ $setting->phone }}" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> {{ $setting->email }}</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i> {{ $setting->whatsapp }}</a></li>
 
@@ -67,7 +88,7 @@
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="https://www.instagram.com/elegantbaby.qa/"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="https://maps.google.com/?q=25.269527,51.408916"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي
+                                <li><a href="https://maps.app.goo.gl/Nab7aze8VgFDCWgk8?g_st=ic"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي
                                 </a></li>
 							</ul>
 						</div>
@@ -163,11 +184,11 @@
                     <div class="col-sm-12">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-                                <li><a href="#" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
+                                <li><a href="tell:00{{ $setting->phone }}" ><i class="fa fa-phone"></i> {{ $setting->phone }}</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> {{ $setting->email }}</a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> {{ $setting->whatsapp }}</a></li>
+                                <li><a href="tell:{{ $setting->whatsapp }}"><i class="fa fa-phone"></i> {{ $setting->whatsapp }}</a></li>
 								<li><a href="https://www.instagram.com/elegantbaby.qa/"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="https://maps.google.com/?q=25.269527,51.408916"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي                                </a></li>
+                                <li><a href="https://maps.app.goo.gl/Nab7aze8VgFDCWgk8?g_st=ic"><i class="fa fa-map-marker"></i>معيذر الشمالي - شارع أم الدوم - مقابل مجمع الحكمة الطبي                                </a></li>
 							</ul>
 						</div>
 					</div>
@@ -179,7 +200,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2023  BELLAGHA. All rights reserved.</p>
+					<p class="pull-left">Copyright © 2023 . All rights reserved.</p>
 				</div>
 			</div>
 		</div>

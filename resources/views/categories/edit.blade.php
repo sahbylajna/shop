@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="panel panel-default">
-  
+
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
@@ -32,7 +32,7 @@
                 </ul>
             @endif
 
-            <form method="POST" action="{{ route('categories.category.update', $category->id) }}" id="edit_category_form" name="edit_category_form" accept-charset="UTF-8" class="form-horizontal">
+            <form method="POST" action="{{ route('categories.category.update', $category->id) }}" enctype="multipart/form-data" id="edit_category_form" name="edit_category_form" accept-charset="UTF-8" class="form-horizontal">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
             @include ('categories.form', [

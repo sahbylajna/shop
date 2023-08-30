@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class category extends Model
 {
-    
+
 
     /**
      * The database table used by the model.
@@ -29,7 +29,8 @@ class category extends Model
      */
     protected $fillable = [
                   'name',
-                  'name_ar'
+                  'name_ar',
+                  'photo'
               ];
 
     /**
@@ -38,14 +39,14 @@ class category extends Model
      * @var array
      */
     protected $dates = [];
-    
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [];
-    
+
 
 
 

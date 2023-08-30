@@ -5,7 +5,7 @@
     <div class="panel panel-default">
 
         <div class="panel-heading clearfix">
-            
+
             <span class="pull-left">
                 <h4 class="mt-5 mb-5">{{ trans('categories.create') }}</h4>
             </span>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="panel-body">
-        
+
             @if ($errors->any())
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)
@@ -28,7 +28,7 @@
                 </ul>
             @endif
 
-            <form method="POST" action="{{ route('categories.category.store') }}" accept-charset="UTF-8" id="create_category_form" name="create_category_form" class="form-horizontal">
+            <form method="POST" action="{{ route('categories.category.store') }}" accept-charset="UTF-8" enctype="multipart/form-data" id="create_category_form" name="create_category_form" class="form-horizontal">
             {{ csrf_field() }}
             @include ('categories.form', [
                                         'category' => null,

@@ -29,7 +29,7 @@
             </div>
 
         </div>
-        
+
         @if(count($categories) == 0)
             <div class="panel-body text-center">
                 <h4>{{ trans('categories.none_available') }}</h4>
@@ -43,7 +43,7 @@
                         <tr>
                             <th>{{ trans('categories.name') }}</th>
                             <th>{{ trans('categories.name_ar') }}</th>
-
+                            <th>{{ trans('produits.photo') }}</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -52,6 +52,7 @@
                         <tr>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->name_ar }}</td>
+                            <td> <img src="{{ asset($category->photo) }}" style="width: 100px" alt=""></td>
 
                             <td>
 
@@ -73,7 +74,7 @@
                                     </div>
 
                                 </form>
-                                
+
                             </td>
                         </tr>
                     @endforeach
@@ -86,8 +87,8 @@
         <div class="panel-footer">
             {!! $categories->render() !!}
         </div>
-        
+
         @endif
-    
+
     </div>
 @endsection
