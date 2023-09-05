@@ -6,6 +6,24 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <style>
+
+@media (max-width: 768px) {
+  .horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px; /* Add padding for better visual appearance */
+  }
+
+  /* Optional: Add some styling to the items within the horizontal-scroll container */
+  .horizontal-scroll > * {
+    display: inline-block;
+    margin-right: 10px; /* Add spacing between items */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
    thead , .panel-default>.panel-heading {
     color: #ffffff;
     background-color: #01a7b7;
